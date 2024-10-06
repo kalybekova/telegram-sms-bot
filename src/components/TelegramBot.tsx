@@ -39,16 +39,16 @@ export default function TelegramBot() {
 
   return (
     <div>
-      <h1>Telegram bot</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className="form">
+        <h1>Telegram bot</h1>
         <input
           type="text"
-          placeholder="userName"
+          placeholder="UserName"
           {...register("userName", { required: true })}
         />
         <input
           type="text"
-          placeholder="email"
+          placeholder="Email"
           {...register("email", {
             required: true,
             pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -56,18 +56,18 @@ export default function TelegramBot() {
         />
         <input
           type="text"
-          placeholder="subject"
+          placeholder="Subject"
           {...register("subject", { required: true })}
         />{" "}
         <input
           type="text"
-          placeholder="description"
+          placeholder="Description"
           {...register("description", { required: true })}
         />
         {isSubmitting ? (
-          <button type="submit">loading</button>
+          <button type="submit">Loading</button>
         ) : (
-          <button type="submit">send</button>
+          <button type="submit">Send</button>
         )}
       </form>
     </div>
